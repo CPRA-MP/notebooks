@@ -116,7 +116,7 @@ Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data)
 For ease of use, several single band crosswalks were developed.
 
 >[!IMPORTANT]
->The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, veg_grid_cell_v001__hydro_compartment_v001.tif contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
+>The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, `veg_grid_cell_v001__hydro_compartment_v001.tif` contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
 
 | Name | File Name | Grid Cell | Id Cast On |
 | ---- | --------- | --------- | ---------- |
