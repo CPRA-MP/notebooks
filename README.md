@@ -136,37 +136,6 @@ For ease of use, several single band crosswalks were developed.
 ## GitHub Management 
 
 **COPY NEEDED**
-## Data:
-
-### cpra.mp.data package
-
-Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan. 
-
-### Crosswalk Grids 
-
-For ease of use, several single band crosswalks were developed.
-
->[!IMPORTANT]
->The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, `veg_grid_cell_v001__hydro_compartment_v001.tif` contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
-
-| Name | File Name | Grid Cell | Id Cast On |
-| ---- | --------- | --------- | ---------- |
-| Morph-Hydro Raster | morph_pixel_v001__hydro_compartment_v001.tif | Morph Pixel | Hydrocompartment Id |
-| Morph-Veg Raster | morph_pixel_v001__veg_grid_cell_v001.tif | Morph Pixel | Veg Grid Cell Id |
-| Veg-Hydro Raster  |veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
-| Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
-
-*In Development:* 
-- [ ] Morph -> region
-- [ ] Morph -> ecoregion
-- [ ] Morph -> hydro compartment
-- [ ] Veg -> region
-- [ ] Veg-> ecoregion
-- [ ] Veg -> hydro compartment
-
-## GitHub Management 
-
-**COPY NEEDED**
 
 #### Additional Package Requirements
 
