@@ -140,12 +140,11 @@ For ease of use, several single band crosswalks were developed.
 - If this is something that ultimately will go into QAQC portal workflow
   - Confer with Matt on development plan
 
-_For more documentation, please refer to the [PSC Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### File Saving Conventions 
 
+If you need to save outputs from your analysis to raster files, please use the following profile settings for consistency with other CPRA Master Plan raster data.
+`
 veg_profile = {
         "compress": "zstd".upper(),
         "compression_level": 6,
@@ -159,8 +158,8 @@ veg_profile = {
         "height": 365,
         "transform": rio.transform.from_bounds(404710, 3199480, 909670, 3374680, width=1052, height=365)
     }
-
-From Matt:
+`
+*From Matt:*
 
 Settings for the cogs are:
 Compression algorithm: zstd
@@ -169,7 +168,9 @@ Compression level: 6
 Nodata value: -9999
 Resampling algorithm: nearest neighbor
  
- 
+_For more documentation, please refer to the [PSC Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/)_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Folder Structure  -->
 ## Project Structure
