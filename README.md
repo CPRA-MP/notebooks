@@ -1,16 +1,9 @@
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://www.github.com/CPRA-MP/notebooks">
-    <img src="images/Primary Logo 1 Full Color RGB HighRes.png" alt="Logo" width="400" height="80">
-  </a>
-
 <h3 align="center">CPRA - Jupyter Notebook User Guide</h3>
 
   <p align="center">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+    This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
     <br />
     <a href="https://coastal.la.gov/our-plan/"><strong>Louisiana’s Coastal Master Plan »</strong></a>
     <br />
@@ -28,37 +21,19 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#clone-repo">Clone</a></li>
+        <li><a href="#jupyter-notebook-set-up">Jupyter Notebook Set Up</a></li>
+        <li><a href="#explore-sample-notebooks">Explore Sample Notebooks</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#github-management">GitHub Management</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-<img src="images/website_ad_screenshot.png" alt="Public Website" width="400" height="200">
-
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -84,24 +59,23 @@ There are three options for accessing Jupyter Notebooks:
 4) This step only needs to be done the first time you log into OnDemand: From the File menu, choose New -> Terminal. In the terminal run this script: `/ocean/projects/bcs200002p/shared/jupyter/setup.sh`. This will install the custom Python kernel Matt Yoder created and make a link to the shared jupyter directory in your home directory on Bridges-2. After running the script, refresh your browser as instructed in the script output.
 5) In the Jupyter file browser, browse to the jupyter link created in the previous step and open the `read_data_example.ipynb` notebook (or create a new notebook). Be sure to run the notebook using the CPRA Master Plan (Python) kernel, which includes the `cpra.mp.data` library and its dependencies. 
 
-
-### Explore Sample Jupyter Notebooks
+### Explore Sample Notebooks
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Sample Notebook One Salinity Analysis: 
+#### Sample Notebook One Salinity Analysis:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. 
-  - Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
-    - Two conditions (A True and B True) and export map or IDs 
-    - Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
-  - Functionality Demonstrated:
-    - Maps of input data directly pulled from api/bridges for this analysis
-      - Raster (Veg cell) map of vegetation
-      - Vector (hydro comp) map of salinity
-    - OUTPUT: Raster (Veg cell) map of outputs
-      - Ability to zoom in/out of maps
-      - Filtering data 
+    * Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
+        * Two conditions (A True and B True) and export map or IDs 
+    * Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
+        * Functionality Demonstrated:
+    * Maps of input data directly pulled from api/bridges for this analysis
+      * Raster (Veg cell) map of vegetation
+      * Vector (hydro comp) map of salinity
+    * OUTPUT: Raster (Veg cell) map of outputs
+      * Ability to zoom in/out of maps
+      * Filtering data 
 
 
 #### Sample Notebook 2 Description:
@@ -115,15 +89,37 @@ This notebook demonstrates a project-level cost-benefit analysis through map dis
     - Generally connect to MPD PostgreSQL db (New Name Alert: Model Attribute Database?)
       - Should this connection function be stored in PSC library?
 
-## Usage 
+## Data:
 
-### Set Up Your Own Jupyter Notebook
+### cpra.mp.data package
 
-#### Using On Demand 
+Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan. 
 
-Navigate to your personal folder on On Demand
+### Crosswalk Grids 
 
-#### Git Management
+For ease of use, several single band crosswalks were developed.
+
+>[!IMPORTANT]
+>The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, veg_grid_cell_v001__hydro_compartment_v001.tif contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
+
+| Name | File Name | Grid Cell | Id Cast On |
+| ---- | --------- | --------- | ---------- |
+| Morph-Hydro Raster | morph_pixel_v001__hydro_compartment_v001.tif | Morph Pixel | Hydrocompartment Id |
+| Morph-Veg Raster | morph_pixel_v001__veg_grid_cell_v001.tif | Morph Pixel | Veg Grid Cell Id |
+| Veg-Hydro Raster  |veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
+| Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
+
+*In Development:* 
+- [ ] Morph -> region
+- [ ] Morph -> ecoregion
+- [ ] Morph -> hydro compartment
+- [ ] Veg -> region
+- [ ] Veg-> ecoregion
+- [ ] Veg -> hydro compartment
+
+## GitHub Management 
+
+**COPY NEEDED**
 
 #### Additional Package Requirements
 
@@ -135,19 +131,6 @@ Navigate to your personal folder on On Demand
   - Confer with Matt on development plan
 
 _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-### Milestones
-
-- [Track our progress here](https://www.google.com)
-
-
-See the [open issues](https://www.google.com) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
