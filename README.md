@@ -4,7 +4,6 @@
 
   <p align="center">
     This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
-    This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
     <br />
     <a href="https://coastal.la.gov/our-plan/"><strong>Louisiana’s Coastal Master Plan »</strong></a>
     <br />
@@ -26,11 +25,8 @@
       <ul>
         <li><a href="#jupyter-notebook-set-up">Jupyter Notebook Set Up</a></li>
         <li><a href="#explore-sample-notebooks">Explore Sample Notebooks</a></li>
-        <li><a href="#jupyter-notebook-set-up">Jupyter Notebook Set Up</a></li>
-        <li><a href="#explore-sample-notebooks">Explore Sample Notebooks</a></li>
       </ul>
     </li>
-    <li><a href="#github-management">GitHub Management</a></li>
     <li><a href="#github-management">GitHub Management</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -64,41 +60,39 @@ There are three options for accessing Jupyter Notebooks:
 5) In the Jupyter file browser, browse to the jupyter link created in the previous step and open the `read_data_example.ipynb` notebook (or create a new notebook). Be sure to run the notebook using the CPRA Master Plan (Python) kernel, which includes the `cpra.mp.data` library and its dependencies. 
 
 ### Explore Sample Notebooks
-### Explore Sample Notebooks
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
 #### Sample Notebook One Salinity Analysis:
-#### Sample Notebook One Salinity Analysis:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. 
-    * Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
-        * Two conditions (A True and B True) and export map or IDs 
-    * Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
-        * Functionality Demonstrated:
-    * Maps of input data directly pulled from api/bridges for this analysis
-      * Raster (Veg cell) map of vegetation
-      * Vector (hydro comp) map of salinity
-    * OUTPUT: Raster (Veg cell) map of outputs
-      * Ability to zoom in/out of maps
-      * Filtering data 
-    * Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
-        * Two conditions (A True and B True) and export map or IDs 
-    * Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
-        * Functionality Demonstrated:
-    * Maps of input data directly pulled from api/bridges for this analysis
-      * Raster (Veg cell) map of vegetation
-      * Vector (hydro comp) map of salinity
-    * OUTPUT: Raster (Veg cell) map of outputs
-      * Ability to zoom in/out of maps
-      * Filtering data 
+- Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
+    - Two conditions (A True and B True) and export map or IDs 
+- Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
+    - Functionality Demonstrated:
+- Maps of input data directly pulled from api/bridges for this analysis
+    - Raster (Veg cell) map of vegetation
+    - Vector (hydro comp) map of salinity
+- OUTPUT: Raster (Veg cell) map of outputs
+    - Ability to zoom in/out of maps
+    - Filtering data 
+- Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
+    - Two conditions (A True and B True) and export map or IDs 
+- Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
+    - Functionality Demonstrated:
+- Maps of input data directly pulled from api/bridges for this analysis
+    - Raster (Veg cell) map of vegetation
+    - Vector (hydro comp) map of salinity
+- OUTPUT: Raster (Veg cell) map of outputs
+    - Ability to zoom in/out of maps
+    - Filtering data 
 
 
 #### Sample Notebook 2 Description:
 
 This notebook demonstrates a project-level cost-benefit analysis through map display functionalities and timeseries plots are demonstrated. 
 
-        - OVERALL PROCESS:
+    - OVERALL PROCESS:
           - Loop through land rasters at veg cell resolution and aggregate at project level based on veg->hydro->eco-region->project/model group crosswalks and plot timeseries of total land over year for a single project.
         - come back for February - spatial aggregation of matt's 3-digit concatenation on land type (to add maintained land as benefit)
     - Example of how to change font sizes/types/colors
@@ -111,7 +105,7 @@ This notebook demonstrates a project-level cost-benefit analysis through map dis
 
 Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan. 
 
-### Crosswalk Grids 
+### Crosswalk Grids
 
 For ease of use, several single band crosswalks were developed.
 
@@ -122,7 +116,7 @@ For ease of use, several single band crosswalks were developed.
 | ---- | --------- | --------- | ---------- |
 | Morph-Hydro Raster | morph_pixel_v001__hydro_compartment_v001.tif | Morph Pixel | Hydrocompartment Id |
 | Morph-Veg Raster | morph_pixel_v001__veg_grid_cell_v001.tif | Morph Pixel | Veg Grid Cell Id |
-| Veg-Hydro Raster  |veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
+| Veg-Hydro Raster | veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
 | Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
 
 *In Development:* 
@@ -133,7 +127,7 @@ For ease of use, several single band crosswalks were developed.
 - [ ] Veg-> ecoregion
 - [ ] Veg -> hydro compartment
 
-## GitHub Management 
+## GitHub Management
 
 **COPY NEEDED**
 
@@ -149,6 +143,33 @@ For ease of use, several single band crosswalks were developed.
 _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+#### File Saving Conventions 
+
+veg_profile = {
+        "compress": "zstd".upper(),
+        "compression_level": 6,
+        "count": 1,
+        "crs": "epsg:26915",
+        "driver": "COG",
+        "dtype": np.int32,
+        "nodata": -9999,
+        "resampling": "NEAREST",
+        "width": 1052,
+        "height": 365,
+        "transform": rio.transform.from_bounds(404710, 3199480, 909670, 3374680, width=1052, height=365)
+    }
+
+From Matt:
+
+Settings for the cogs are:
+Compression algorithm: zstd
+ 
+Compression level: 6
+Nodata value: -9999
+Resampling algorithm: nearest neighbor
+ 
+ 
 
 <!-- Folder Structure  -->
 ## Project Structure
