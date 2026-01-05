@@ -63,7 +63,7 @@ There are three options for accessing Jupyter Notebooks:
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Sample Notebook One Salinity Analysis `samples/scenario_one_v4.ipynb` Description:
+#### Template Notebook One `templates/scenario_one_v4.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
     - OVERALL PROCESS:
@@ -73,7 +73,7 @@ The Salinity Analysis notebook aims to demonstrate a few different functionaliti
         - Analyze the joined data to identify areas where salinity levels exceed the threshold and have caused die-off of freshwater marsh vegetation
         - Visualize results using matplotlib and altair
 
-#### Sample Notebook 2 Description:
+#### Template Notebook Two Description:
 
 This notebook demonstrates a project-level cost-benefit analysis through map display functionalities and timeseries plots are demonstrated. 
 
