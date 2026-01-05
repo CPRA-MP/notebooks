@@ -63,30 +63,15 @@ There are three options for accessing Jupyter Notebooks:
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Sample Notebook One Salinity Analysis:
+#### Sample Notebook One Salinity Analysis `samples/scenario_one_v4.ipynb` Description:
 
-The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. 
-- Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
-    - Two conditions (A True and B True) and export map or IDs 
-- Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
-    - Functionality Demonstrated:
-- Maps of input data directly pulled from api/bridges for this analysis
-    - Raster (Veg cell) map of vegetation
-    - Vector (hydro comp) map of salinity
-- OUTPUT: Raster (Veg cell) map of outputs
-    - Ability to zoom in/out of maps
-    - Filtering data 
-- Two week salinity with freshwater vegetation (to show where this change would have caused a change in vegetation / vegetation die-off)
-    - Two conditions (A True and B True) and export map or IDs 
-- Finding where salinity wiped out vegetation, salty areas surpassed two-week salinity find where salinity crossed a threshold and WHERE THERE was freshwater species - spit out IDs (VEG GRID CELL IDS)
-    - Functionality Demonstrated:
-- Maps of input data directly pulled from api/bridges for this analysis
-    - Raster (Veg cell) map of vegetation
-    - Vector (hydro comp) map of salinity
-- OUTPUT: Raster (Veg cell) map of outputs
-    - Ability to zoom in/out of maps
-    - Filtering data 
-
+The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
+    - OVERALL PROCESS:
+        - Pull two week salinity data from Master Plan API for selected scenario and time period
+        - Pull freshwater marsh vegetation raster data from Master Plan API for selected scenario, model, and time period
+        - Join salinity and vegetation data using rasterio and numpy to create windowed lookup arrays
+        - Analyze the joined data to identify areas where salinity levels exceed the threshold and have caused die-off of freshwater marsh vegetation
+        - Visualize results using matplotlib and altair
 
 #### Sample Notebook 2 Description:
 
@@ -101,7 +86,7 @@ This notebook demonstrates a project-level cost-benefit analysis through map dis
 
 ## Data:
 
-### cpra.mp.data package
+### Master Plan Data Package
 
 Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan. 
 
