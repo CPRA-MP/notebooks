@@ -65,12 +65,12 @@ Review example notebooks to learn best practices on accessing/manipulating data
 #### Template Notebook One `templates/scenario_one_v4.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
-    - OVERALL PROCESS:
-        - Pull two week salinity data from Master Plan API for selected scenario and time period
-        - Pull freshwater marsh vegetation raster data from Master Plan API for selected scenario, model, and time period
-        - Join salinity and vegetation data using rasterio and numpy to create windowed lookup arrays
-        - Analyze the joined data to identify areas where salinity levels exceed the threshold and have caused die-off of freshwater marsh vegetation
-        - Visualize results using matplotlib and altair
+- OVERALL PROCESS:
+    - Pull two week salinity data from Master Plan API for selected scenario and time period
+    - Pull freshwater marsh vegetation raster data from Master Plan API for selected scenario, model, and time period
+    - Join salinity and vegetation data using rasterio and numpy to create windowed lookup arrays
+    - Analyze the joined data to identify areas where salinity levels exceed the threshold and have caused die-off of freshwater marsh vegetation
+    - Visualize results using matplotlib and altair
 
 #### Template Notebook Two Description:
 
