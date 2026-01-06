@@ -156,17 +156,16 @@ _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Folder Structure  -->
+<!-- Project Structure  -->
 ## Project Structure
 
 ```
-project_folder/
-├── project_subfolder/                             # NOTE: Description
-│   ├── script_01.py                               # NOTE: Description
-│   └── script_02.py                               # NOTE: Description
-├── project_subfolder/                             # NOTE: Description
-│   ├── script_03.py                               # NOTE: Description
-│
+notebooks/
+├── templates/                                     # Sample/template notebooks for common workflows
+│   └── scenario_one_v4.ipynb                      # Salinity & vegetation die-off analysis example
+├── images/                                        # Screenshot/documentation images
+├── README.md                                      # This file
+└── LICENSE                                        # Project license
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -188,7 +187,7 @@ Distributed under the project_license. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-First Name Last Name - Organization Name - Email Address
+Matt Yoder - CPRA/PSC - myoder@psc.edu (or relevant point of contact)
 
 Project Link: [https://github.com/CPRA-MP/notebooks](https://github.com/CPRA-MP/notebooks)
 
@@ -199,8 +198,9 @@ Project Link: [https://github.com/CPRA-MP/notebooks](https://github.com/CPRA-MP/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Matt Yoder for the `cpra.mp.data` package and kernel setup
+- PSC Bridges-2 support team
+- CPRA Master Plan modeling team
 
 
 
