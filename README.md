@@ -169,41 +169,6 @@ notebooks/
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-If you have a suggestion that would make this better, please *COPY NEEDED*
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-## License
-
-Distributed under the project_license. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- CONTACT -->
-## Contact
-
-Matt Yoder - CPRA/PSC - myoder@psc.edu (or relevant point of contact)
-
-Project Link: [https://github.com/CPRA-MP/notebooks](https://github.com/CPRA-MP/notebooks)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-- Matt Yoder for the `cpra.mp.data` package and kernel setup
-- PSC Bridges-2 support team
-- CPRA Master Plan modeling team
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [product-screenshot]: images/screenshot.png
