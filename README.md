@@ -30,7 +30,12 @@
         <li><a href="#crosswalk-grids">Crosswalk Grids</a></li>
       </ul>
     </li>
-    <li><a href="#github-management">GitHub Management</a></li>
+    <li><a href="#github-management">GitHub Management</a>
+        <ul>
+        <li><a href="#strip-notebook-outputs">Strip Notebook Ouputs</a></li>
+        <li><a href="#additional-package-requirements">Additional Package Requirements</a></li>
+      </ul>
+    </li>
     <li><a href="#project-structure">Project Structure</a></li>
   </ol>
 </details>
@@ -69,14 +74,7 @@ The Salinity Analysis notebook aims to demonstrate a few different functionaliti
 
 #### Template Notebook Two Description:
 
-This notebook demonstrates a project-level cost-benefit analysis through map display functionalities and timeseries plots are demonstrated. 
-
-    - OVERALL PROCESS:
-          - Loop through land rasters at veg cell resolution and aggregate at project level based on veg->hydro->eco-region->project/model group crosswalks and plot timeseries of total land over year for a single project.
-        - come back for February - spatial aggregation of matt's 3-digit concatenation on land type (to add maintained land as benefit)
-    - Example of how to change font sizes/types/colors
-    - Generally connect to MPD PostgreSQL db (New Name Alert: Model Attribute Database?)
-      - Should this connection function be stored in PSC library?
+This notebook demonstrates a project-level cost-benefit analysis through map display functionalities and timeseries plots are demonstrated.
 
 ### Master Plan Data Package
 
@@ -106,7 +104,19 @@ For ease of use, several single band crosswalks were developed.
 
 ## GitHub Management
 
-This repository is managed on GitHub, changes and additions to the notebooks are automatically pushed daily from Bridges-2. Additionally, the repository is set up to only push notebook files and not data files.
+This repository is managed on GitHub, changes and additions to the notebooks are automatically pushed daily from Bridges-2. Additionally, the repository utilizes [`nbstripout`](https://pypi.org/project/nbstripout/) to remove output cells for cleaner version control.
+
+### Strip Notebook Outputs
+
+This repository uses `nbstripout` to remove output cells from Jupyter Notebooks before committing them to the repository. This helps keep the repository clean and reduces file size. To set up `nbstripout` in your local environment, follow these steps:
+
+1. Install `nbstripout` using conda: `conda install -c conda-forge nbstripout`
+2. Navigate to the repository directory in your terminal.
+3. Run the command: `nbstripout --install`
+
+### Daily Push from Bridges-2
+
+
 
 ### Additional Package Requirements
 
