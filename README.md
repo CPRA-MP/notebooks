@@ -161,6 +161,10 @@ _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://
 
 ```
 notebooks/
+├── icm/                                           # ICM-related notebooks
+├── clara/                                         # CLARA-related notebooks
+├── pct/                                           # CLARA-related notebooks
+├── cma/                                           # CLARA-related notebooks
 ├── templates/                                     # Sample/template notebooks for common workflows
 │   └── scenario_one_v4.ipynb                      # Salinity & vegetation die-off analysis example
 ├── images/                                        # Screenshot/documentation images
