@@ -68,7 +68,7 @@ When creating new notebooks for your analyses, please follow these conventions t
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Template Notebook One `templates/scenario_one_v4.ipynb` Description:
+#### Template Notebook One `templates/qaqc_salinity_veg_investigation.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
 
@@ -141,7 +141,7 @@ notebooks/
 ├── pct/                                           # CLARA-related notebooks
 ├── cma/                                           # CLARA-related notebooks
 ├── templates/                                     # Sample/template notebooks for common workflows
-│   └── scenario_one_v4.ipynb                      # Salinity & vegetation die-off analysis example
+│   └── qaqc_salinity_veg_investigation.ipynb      # Salinity & vegetation die-off analysis example
 ├── images/                                        # Screenshot/documentation images
 ├── README.md                                      # This file
 └── LICENSE                                        # Project license
