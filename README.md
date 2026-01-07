@@ -8,9 +8,6 @@
     <a href="https://coastal.la.gov/our-plan/"><strong>Louisiana’s Coastal Master Plan »</strong></a>
     <br />
     <br />
-    <a href="https://www.google.com"> View Sub Sample Link</a>
-    ·
-    <a href="https://www.google.com">View Public Site</a>
   </p>
 </div>
 
@@ -20,37 +17,37 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Getting Started with Jupyter Notebooks and IDE</a>
       <ul>
-        <li><a href="#jupyter-notebook-set-up">Jupyter Notebook Set Up</a></li>
-        <li><a href="#explore-sample-notebooks">Explore Sample Notebooks</a></li>
+        <li><a href="#jupyter-lab-set-up">Jupyter Lab Set Up</a></li>
+      </ul>
+    </li>
+    <li><a href="#naming-conventions">Naming Conventions</a></li>
+    <li>
+      <a href="#explore-template-notebooks">Explore Template Notebooks</a>
+      <ul>
+        <li><a href="#master-plan-data-package">Master Plan Data Package</a></li>
+        <li><a href="#crosswalk-grids">Crosswalk Grids</a></li>
       </ul>
     </li>
     <li><a href="#github-management">GitHub Management</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#project-structure">Project Structure</a></li>
   </ol>
 </details>
 
 <!-- GETTING STARTED -->
-## Getting Started
+### Getting Started with Jupyter Notebooks and IDE
 
-There are three options for accessing Jupyter Notebooks:
+There are two options for accessing Jupyter Notebooks:
+- **OnDemand Jupyter Lab**
+  - Connect to CPRA Master Plan kernel
+- **OnDemand VSCode Server**
+  - Connect to CPRA Master Plan kernel
 
-	1. Step 1: Set up your IDE:
-		a. OnDemand Jupyter Lab
-			i. Connect to CPRA Master Plan kernel
-		b. OnDemand VSCode Server
-			i. Connect to CPRA Master Plan kernel
-		c. Local IDE SSH-ed into Bridges
-			i. Connect to CPRA Master Plan kernel - still troubleshooting
-
-### Jupyter Notebook Set Up
+#### Jupyter Lab Set Up
 
 1) Log in to [Bridges-2 Open OnDemand](https://ondemand.bridges2.psc.edu/) with your PSC credentials.
-2) Choose Jupyter Notebook: Bridges-2.
+2) Choose Jupyter Lab: Bridges-2.
 
     <img src="images/on_demand_options.png" alt="Screenshot of OnDemand Menu Page with Jupyter Lab option surrounded by red rectangle." width="500" height="300">
 
@@ -58,19 +55,17 @@ There are three options for accessing Jupyter Notebooks:
 4) This step only needs to be done the first time you log into OnDemand: From the File menu, choose New -> Terminal. In the terminal run this script: `/ocean/projects/bcs200002p/shared/jupyter/setup.sh`. This will install the custom Python kernel Matt Yoder created and make a link to the shared jupyter directory in your home directory on Bridges-2. After running the script, refresh your browser as instructed in the script output.
 5) In the Jupyter file browser, browse to the jupyter link created in the previous step and open the `read_data_example.ipynb` notebook (or create a new notebook). Be sure to run the notebook using the CPRA Master Plan (Python) kernel, which includes the `cpra.mp.data` library and its dependencies. 
 
-### Explore Sample Notebooks
+### Naming Conventions
+
+When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should be general project followed by a brief description of the notebook's content (e.g., `generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb
+
+### Explore Template Notebooks
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
 #### Template Notebook One `templates/scenario_one_v4.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
-- OVERALL PROCESS:
-    - Pull two week salinity data from Master Plan API for selected scenario and time period
-    - Pull freshwater marsh vegetation raster data from Master Plan API for selected scenario, model, and time period
-    - Join salinity and vegetation data using rasterio and numpy to create windowed lookup arrays
-    - Analyze the joined data to identify areas where salinity levels exceed the threshold and have caused die-off of freshwater marsh vegetation
-    - Visualize results using matplotlib and altair
 
 #### Template Notebook Two Description:
 
@@ -83,11 +78,9 @@ This notebook demonstrates a project-level cost-benefit analysis through map dis
     - Generally connect to MPD PostgreSQL db (New Name Alert: Model Attribute Database?)
       - Should this connection function be stored in PSC library?
 
-## Data:
-
 ### Master Plan Data Package
 
-Created by Matt Yoder the [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan. 
+The [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and writes data pertaining to the CPRA Master Plan.
 
 ### Crosswalk Grids
 
@@ -113,9 +106,9 @@ For ease of use, several single band crosswalks were developed.
 
 ## GitHub Management
 
-**COPY NEEDED**
+This repository is managed on GitHub, changes and additions to the notebooks are automatically pushed daily from Bridges-2. Additionally, the repository is set up to only push notebook files and not data files.
 
-#### Additional Package Requirements
+### Additional Package Requirements
 
 - IF YOU NEED TO play around with new libraries for manipulating data:
   - Create a conda environment in your personal folder on bridges using standard python version 
@@ -124,34 +117,6 @@ For ease of use, several single band crosswalks were developed.
 - If this is something that ultimately will go into QAQC portal workflow
   - Confer with Matt on development plan
 
-
-#### File Saving Conventions 
-
-If you need to save outputs from your analysis to raster files, please use the following profile settings for consistency with other CPRA Master Plan raster data.
-```
-veg_profile = {
-        "compress": "zstd".upper(),
-        "compression_level": 6,
-        "count": 1,
-        "crs": "epsg:26915",
-        "driver": "COG",
-        "dtype": np.int32,
-        "nodata": -9999,
-        "resampling": "NEAREST",
-        "width": 1052,
-        "height": 365,
-        "transform": rio.transform.from_bounds(404710, 3199480, 909670, 3374680, width=1052, height=365)
-    }
-```
-*From Matt:*
-
-Settings for the cogs are:
-Compression algorithm: zstd
- 
-Compression level: 6
-Nodata value: -9999
-Resampling algorithm: nearest neighbor
- 
 _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
