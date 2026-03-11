@@ -70,11 +70,11 @@ Review example notebooks to learn best practices on accessing/manipulating data
 
 #### Template Notebook One `templates/qaqc_salinity_veg_investigation.ipynb` Description:
 
-The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation.
+The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation. This notebook demonstrates a block-wise raster workflow to identify the first year freshwater marsh pixels meet a salinity threshold condition for a selected scenario and model group. It loads salinity and vegetation data from CPRA sources, maps hydrocompartment salinity values to vegetation grid cells with a crosswalk raster, and processes windows to handle large coastal datasets efficiently. It then writes the threshold-year output raster, converts results to polygons, and builds an interactive map for QA/QC and interpretation.
 
-#### Template Notebook Two Description:
+#### Template Notebook Two Description `templates/analysis_project_benefits.ipynb` Description:
 
-This notebook demonstrates a project-level cost-benefit analysis through map display functionalities and timeseries plots are demonstrated.
+Template Notebook Two demonstrates how to do efficient, large-raster coastal analysis end to end: define project/scenario scope, process rasters in windows (instead of loading full grids), and aggregate pixel counts to meaningful project metrics. This notebook computes project land area and project benefits over time by comparing Future With Action (FWA) model groups to a Future Without Action (FWOA) baseline across selected scenarios. It uses windowed raster processing with an ecoregion crosswalk to efficiently count land pixels by year and ecoregion, then converts those counts into area metrics (acres or square meters) and project-level benefit values. Finally, it produces faceted interactive time-series charts that let users switch between benefit and land-area views for each project and model group.
 
 ### Master Plan Data Package
 
@@ -116,14 +116,14 @@ This repository uses `nbstripout` to remove output cells from Jupyter Notebooks 
 
 ### Daily Push from Bridges-2
 
-
+This `notebooks` folder is configured to sync from Bridges-2 to this GitHub repository on a daily schedule, so updates generated on Bridges-2 are automatically pushed each day.
 
 ### Additional Package Requirements
 
-- IF YOU NEED TO play around with new libraries for manipulating data:
+- IF YOU NEED TO explore new libraries for manipulating data:
   - Create a conda environment in your personal folder on bridges using standard python version 
   - Test/figure out workflow
-  - Confer with matt on adding to the Kernal if needed
+  - Confer with Matt on adding to the Kernal if needed
 - If this is something that ultimately will go into QAQC portal workflow
   - Confer with Matt on development plan
 
