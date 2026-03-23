@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-<h3 align="center">CPRA - Jupyter Notebook User Guide</h3>
+<h3 align="center"> DRAFT - UNDER REVIEW - CPRA - Jupyter Notebook User Guide</h3>
 
   <p align="center">
     This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
