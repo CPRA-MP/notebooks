@@ -62,17 +62,17 @@ There are two options for accessing Jupyter Notebooks:
 
 ### Naming Conventions
 
-When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should be general project followed by a brief description of the notebook's content (e.g., `generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb
+When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should be general project followed by a brief description of the notebook's content (e.g., `generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
 
 ### Explore Template Notebooks
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Template Notebook One `templates/qaqc_salinity_veg_investigation.ipynb` Description:
+#### Template Notebook One `template_qaqc_salinity_veg_investigation.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation. This notebook demonstrates a block-wise raster workflow to identify the first year freshwater marsh pixels meet a salinity threshold condition for a selected scenario and model group. It loads salinity and vegetation data from CPRA sources, maps hydrocompartment salinity values to vegetation grid cells with a crosswalk raster, and processes windows to handle large coastal datasets efficiently. It then writes the threshold-year output raster, converts results to polygons, and builds an interactive map for QA/QC and interpretation.
 
-#### Template Notebook Two Description `templates/analysis_project_benefits.ipynb` Description:
+#### Template Notebook Two Description `template_analysis_project_benefits.ipynb` Description:
 
 Template Notebook Two demonstrates how to do efficient, large-raster coastal analysis end to end: define project/scenario scope, process rasters in windows (instead of loading full grids), and aggregate pixel counts to meaningful project metrics. This notebook computes project land area and project benefits over time by comparing Future With Action (FWA) model groups to a Future Without Action (FWOA) baseline across selected scenarios. It uses windowed raster processing with an ecoregion crosswalk to efficiently count land pixels by year and ecoregion, then converts those counts into area metrics (acres or square meters) and project-level benefit values. Finally, it produces faceted interactive time-series charts that let users switch between benefit and land-area views for each project and model group.
 
@@ -91,12 +91,12 @@ For ease of use, several single band crosswalks were developed.
 | ---- | --------- | --------- | ---------- |
 | Morph-Hydro Raster | morph_pixel_v001__hydro_compartment_v001.tif | Morph Pixel | Hydrocompartment Id |
 | Morph-Veg Raster | morph_pixel_v001__veg_grid_cell_v001.tif | Morph Pixel | Veg Grid Cell Id |
+| Morph-Ecoregion Raster | morph_pixel_v001__ecoregion_v001.tif | Morph Pixel | EcoRegion Id |
 | Veg-Hydro Raster | veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
 | Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
 
 *In Development:* 
 - [ ] Morph -> region
-- [ ] Morph -> ecoregion
 - [ ] Morph -> hydro compartment
 - [ ] Veg -> region
 - [ ] Veg-> ecoregion
