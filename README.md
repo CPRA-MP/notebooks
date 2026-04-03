@@ -62,7 +62,34 @@ There are two options for accessing Jupyter Notebooks:
 
 ### Naming Conventions
 
-When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should be general project followed by a brief description of the notebook's content (e.g., `generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
+When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should indicate model/domain, the general project followed by a brief description of the notebook's content (e.g., `prefix_generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
+
+#### File Name Pattern
+
+    prefix_topic_description.ipynb
+
+#### Prefix Definitions
+
+- icm_ : ICM notebooks  
+- clara_ : CLARA notebooks  
+- pct_ : PCT notebooks  
+- cma_ : CMA notebooks  
+- template_ : shared example and demonstration notebooks
+
+#### Naming Guidance
+
+- Use lowercase letters.
+- Separate words with underscores.
+- Keep names concise but descriptive.
+- Start with the correct prefix, then include the topic and purpose.
+
+#### Examples
+
+- icm_salinity_veg_investigation.ipynb
+- clara_project_benefits.ipynb
+- pct_habitat_change_summary.ipynb
+- cma_land_area_timeseries.ipynb
+- template_analysis_project_benefits.ipynb
 
 ### Explore Template Notebooks
 
@@ -136,15 +163,11 @@ _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://
 
 ```
 notebooks/
-├── icm/                                           # ICM-related notebooks
-├── clara/                                         # CLARA-related notebooks
-├── pct/                                           # CLARA-related notebooks
-├── cma/                                           # CLARA-related notebooks
-├── templates/                                     # Sample/template notebooks for common workflows
-│   └── qaqc_salinity_veg_investigation.ipynb      # Salinity & vegetation die-off analysis example
-├── images/                                        # Screenshot/documentation images
-├── README.md                                      # This file
-└── LICENSE                                        # Project license
+├── template_qaqc_salinity_veg_investigation.ipynb
+├── template_analysis_project_benefits.ipynb
+├── images/                                          # Screenshot/documentation images
+├── README.md                                        # This file
+└── LICENSE                                          # Project license
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
