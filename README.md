@@ -1,11 +1,9 @@
 <a id="readme-top"></a>
 
-<h3 align="center"> DRAFT - UNDER REVIEW - CPRA - Jupyter Notebook User Guide</h3>
+<h3 align="center"> Analysis Notebook User Guide</h3>
 
-  <p align="center">
-    This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
-    <br />
-    <a href="https://coastal.la.gov/our-plan/"><strong>Louisiana’s Coastal Master Plan »</strong></a>
+  <p align="left">
+    This repository contains standardized Python Jupyter notebook templates with example best-practices for pulling data generated for the 2029 Louisiana Coastal Master Plan using <a href="https://github.com/pscedu/cpra.mp.data?tab=readme-ov-file"><strong>the Master Plan Data Package</strong></a> to analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, and serve as a staging ground for future QAQC Portal development. 
     <br />
     <br />
   </p>
@@ -17,7 +15,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#getting-started">Getting Started with Jupyter Notebooks and IDE</a>
+      <a href="#getting-started">Getting Started with Analysis Notebooks and IDE</a>
       <ul>
         <li><a href="#jupyter-lab-set-up">Jupyter Lab Set Up</a></li>
       </ul>
@@ -41,9 +39,9 @@
 </details>
 
 <!-- GETTING STARTED -->
-### Getting Started with Jupyter Notebooks and IDE
+### Getting Started with Analysis Notebooks and IDE
 
-There are two options for accessing Jupyter Notebooks:
+There are two options for accessing Anlaysis Notebooks:
 - **OnDemand Jupyter Lab**
   - Connect to CPRA Master Plan kernel
 - **OnDemand VSCode Server**
@@ -62,11 +60,7 @@ There are two options for accessing Jupyter Notebooks:
 
 ### Naming Conventions
 
-When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should indicate model/domain, the general project followed by a brief description of the notebook's content (e.g., `prefix_generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
-
-#### File Name Pattern
-
-    prefix_topic_description.ipynb
+When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should indicate model/domain, the general purpose, and a brief detail describing the notebook's content (e.g., `prefix_generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
 
 #### Prefix Definitions
 
@@ -85,10 +79,10 @@ When creating new notebooks for your analyses, please follow these conventions t
 
 #### Examples
 
-- icm_salinity_veg_investigation.ipynb
-- clara_project_benefits.ipynb
-- pct_habitat_change_summary.ipynb
-- cma_land_area_timeseries.ipynb
+- icm_qaqc_salinity_veg_investigation.ipynb
+- icm_qaqc_habitat_change_summary.ipynb
+- clara_analysis_project_benefits.ipynb
+- icm_analysis_land_area_timeseries.ipynb
 - template_analysis_project_benefits.ipynb
 
 ### Explore Template Notebooks
@@ -109,7 +103,7 @@ The [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and wri
 
 ### Crosswalk Grids
 
-For ease of use, several single band crosswalks were developed.
+For ease of use, several single band crosswalk rasters were developed.
 
 >[!IMPORTANT]
 >The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, `veg_grid_cell_v001__hydro_compartment_v001.tif` contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
@@ -122,12 +116,6 @@ For ease of use, several single band crosswalks were developed.
 | Veg-Hydro Raster | veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
 | Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
 
-*In Development:* 
-- [ ] Morph -> region
-- [ ] Morph -> hydro compartment
-- [ ] Veg -> region
-- [ ] Veg-> ecoregion
-- [ ] Veg -> hydro compartment
 
 ## GitHub Management
 
