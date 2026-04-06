@@ -135,7 +135,7 @@ This `notebooks` folder is configured to sync from Bridges-2 to this GitHub repo
 
 ### Repository Publishing Workflow
 
-Notebook development should occur outside this repository during exploration and iteration (for example, in user folders). Once a notebook is ready for team use, place it in the `production/` folder so the shared, review-ready set is clearly separated from in-progress work.
+Notebook development may occur outside this repository during exploration and iteration (for example, in user folders). Once a notebook is ready for team use, place it in the `production/` folder so the shared, review-ready set is clearly separated from in-progress work.
 
 This repository is maintained in a passive mode: content is synchronized from Bridges-2 on a schedule, with GitHub serving as the shared source of record rather than an actively curated day-to-day workflow.
 
