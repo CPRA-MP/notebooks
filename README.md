@@ -151,9 +151,12 @@ _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://
 
 ```
 notebooks/
-├── template_qaqc_salinity_veg_investigation.ipynb
-├── template_analysis_project_benefits.ipynb
 ├── images/                                          # Screenshot/documentation images
+├── production/
+│   ├── template_analysis_project_benefits.ipynb
+│   ├── template_qaqc_salinity_veg_investigation.ipynb
+│   ├── template_read_data_example.ipynb
+│   ├── template_visualization_examples.ipynb
 ├── README.md                                        # This file
 └── LICENSE                                          # Project license
 ```
