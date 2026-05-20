@@ -1,9 +1,11 @@
 <a id="readme-top"></a>
 
-<h3 align="center"> Analysis Notebook User Guide</h3>
+<h3 align="center"> DRAFT - UNDER REVIEW - CPRA - Jupyter Notebook User Guide</h3>
 
-  <p align="left">
-    This repository contains standardized Python Jupyter notebook templates with example best-practices for pulling data generated for the 2029 Louisiana Coastal Master Plan using <a href="https://github.com/pscedu/cpra.mp.data?tab=readme-ov-file"><strong>the Master Plan Data Package</strong></a> to analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, and serve as a staging ground for future QAQC Portal development. 
+  <p align="center">
+    This repository contains standardized Python Jupyter notebook templates that can be utilized to pull data from the Master Plan API to visualize and analyze the outputs of the ICM, CLARA, and PT models that are not currently visualized in the QAQC Portal. These templates aim to streamline the process of data extraction, transformation, visualization, and analysis, enabling users to perform these tasks efficiently and consistently. The templates serve as a staging ground for future QAQC Portal development.  
+    <br />
+    <a href="https://coastal.la.gov/our-plan/"><strong>Louisiana’s Coastal Master Plan »</strong></a>
     <br />
     <br />
   </p>
@@ -15,7 +17,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#getting-started">Getting Started with Analysis Notebooks and IDE</a>
+      <a href="#getting-started">Getting Started with Jupyter Notebooks and IDE</a>
       <ul>
         <li><a href="#jupyter-lab-set-up">Jupyter Lab Set Up</a></li>
       </ul>
@@ -39,9 +41,9 @@
 </details>
 
 <!-- GETTING STARTED -->
-### Getting Started with Analysis Notebooks and IDE
+### Getting Started with Jupyter Notebooks and IDE
 
-There are two options for accessing Anlaysis Notebooks:
+There are two options for accessing Jupyter Notebooks:
 - **OnDemand Jupyter Lab**
   - Connect to CPRA Master Plan kernel
 - **OnDemand VSCode Server**
@@ -60,40 +62,17 @@ There are two options for accessing Anlaysis Notebooks:
 
 ### Naming Conventions
 
-When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should indicate model/domain, the general purpose, and a brief detail describing the notebook's content (e.g., `prefix_generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb with the prefix 'template_' added for these demonstration notebooks.
-
-#### Prefix Definitions
-
-- icm_ : ICM notebooks  
-- clara_ : CLARA notebooks  
-- pct_ : PCT notebooks  
-- cma_ : CMA notebooks  
-- template_ : shared example and demonstration notebooks
-
-#### Naming Guidance
-
-- Use lowercase letters.
-- Separate words with underscores.
-- Keep names concise but descriptive.
-- Start with the correct prefix, then include the topic and purpose.
-
-#### Examples
-
-- icm_qaqc_salinity_veg_investigation.ipynb
-- icm_qaqc_habitat_change_summary.ipynb
-- clara_analysis_project_benefits.ipynb
-- icm_analysis_land_area_timeseries.ipynb
-- template_analysis_project_benefits.ipynb
+When creating new notebooks for your analyses, please follow these conventions to keep things organized and easily searchable. The naming structure should be general project followed by a brief description of the notebook's content (e.g., `generalpurpose_detail.ipynb`). The general purpose can be qaqc, analysis etc., and the detail should provide a brief description of what the code does. Examples include: qaqc_salinity_veg_investigation.ipynb, analysis_project_benefits.ipynb
 
 ### Explore Template Notebooks
 
 Review example notebooks to learn best practices on accessing/manipulating data
 
-#### Template Notebook One `template_qaqc_salinity_veg_investigation.ipynb` Description:
+#### Template Notebook One `templates/qaqc_salinity_veg_investigation.ipynb` Description:
 
 The Salinity Analysis notebook aims to demonstrate a few different functionalities provided by the cpra.mp.data package and raster data. The main goal of this notebook is to identify areas where salinity levels have exceeded a certain threshold and have caused the die-off of freshwater marsh vegetation. This notebook demonstrates a block-wise raster workflow to identify the first year freshwater marsh pixels meet a salinity threshold condition for a selected scenario and model group. It loads salinity and vegetation data from CPRA sources, maps hydrocompartment salinity values to vegetation grid cells with a crosswalk raster, and processes windows to handle large coastal datasets efficiently. It then writes the threshold-year output raster, converts results to polygons, and builds an interactive map for QA/QC and interpretation.
 
-#### Template Notebook Two Description `template_analysis_project_benefits.ipynb` Description:
+#### Template Notebook Two Description `templates/analysis_project_benefits.ipynb` Description:
 
 Template Notebook Two demonstrates how to do efficient, large-raster coastal analysis end to end: define project/scenario scope, process rasters in windows (instead of loading full grids), and aggregate pixel counts to meaningful project metrics. This notebook computes project land area and project benefits over time by comparing Future With Action (FWA) model groups to a Future Without Action (FWOA) baseline across selected scenarios. It uses windowed raster processing with an ecoregion crosswalk to efficiently count land pixels by year and ecoregion, then converts those counts into area metrics (acres or square meters) and project-level benefit values. Finally, it produces faceted interactive time-series charts that let users switch between benefit and land-area views for each project and model group.
 
@@ -103,7 +82,7 @@ The [cpra.mp.data](https://github.com/pscedu/cpra.mp.data) package reads and wri
 
 ### Crosswalk Grids
 
-For ease of use, several single band crosswalk rasters were developed.
+For ease of use, several single band crosswalks were developed.
 
 >[!IMPORTANT]
 >The naming convention for CPRA crosswalks is: GridCellSize__IdCastOn.tif. For example, `veg_grid_cell_v001__hydro_compartment_v001.tif` contains the v001 hydrocompartment id values cast on to the veg grid cells. All rasters and csvs can be found in shared/grid folder
@@ -112,10 +91,16 @@ For ease of use, several single band crosswalk rasters were developed.
 | ---- | --------- | --------- | ---------- |
 | Morph-Hydro Raster | morph_pixel_v001__hydro_compartment_v001.tif | Morph Pixel | Hydrocompartment Id |
 | Morph-Veg Raster | morph_pixel_v001__veg_grid_cell_v001.tif | Morph Pixel | Veg Grid Cell Id |
-| Morph-Ecoregion Raster | morph_pixel_v001__ecoregion_v001.tif | Morph Pixel | EcoRegion Id |
 | Veg-Hydro Raster | veg_grid_cell_v001__hydro_compartment_v001.tif | Veg Grid Cell | Hydrocompartment Id |
 | Veg-EcoRegion Raster | veg_grid_cell_v001__ecoregion_v001.tif | Veg Grid Cell | EcoRegion Id |
 
+*In Development:* 
+- [ ] Morph -> region
+- [ ] Morph -> ecoregion
+- [ ] Morph -> hydro compartment
+- [ ] Veg -> region
+- [ ] Veg-> ecoregion
+- [ ] Veg -> hydro compartment
 
 ## GitHub Management
 
@@ -132,12 +117,6 @@ This repository uses `nbstripout` to remove output cells from Jupyter Notebooks 
 ### Daily Push from Bridges-2
 
 This `notebooks` folder is configured to sync from Bridges-2 to this GitHub repository on a daily schedule, so updates generated on Bridges-2 are automatically pushed each day.
-
-### Repository Publishing Workflow
-
-Notebook development may occur outside this repository during exploration and iteration (for example, in user folders). Once a notebook is ready for team use, place it in the `production/` folder so the shared, review-ready set is clearly separated from in-progress work.
-
-This repository is maintained in a passive mode: content is synchronized from Bridges-2 on a schedule, with GitHub serving as the shared source of record rather than an actively curated day-to-day workflow.
 
 ### Additional Package Requirements
 
@@ -157,14 +136,15 @@ _For more documentation, please refer to the [PSC Bridges-2 User Guide](https://
 
 ```
 notebooks/
-├── images/                                          # Screenshot/documentation images
-├── production/
-│   ├── template_analysis_project_benefits.ipynb
-│   ├── template_qaqc_salinity_veg_investigation.ipynb
-│   ├── template_read_data_example.ipynb
-│   ├── template_visualization_examples.ipynb
-├── README.md                                        # This file
-└── LICENSE                                          # Project license
+├── icm/                                           # ICM-related notebooks
+├── clara/                                         # CLARA-related notebooks
+├── pct/                                           # CLARA-related notebooks
+├── cma/                                           # CLARA-related notebooks
+├── templates/                                     # Sample/template notebooks for common workflows
+│   └── qaqc_salinity_veg_investigation.ipynb      # Salinity & vegetation die-off analysis example
+├── images/                                        # Screenshot/documentation images
+├── README.md                                      # This file
+└── LICENSE                                        # Project license
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
